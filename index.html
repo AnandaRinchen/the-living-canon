@@ -232,21 +232,120 @@ footer p{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;line-height:1.
 <body>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
+<style>
+/* ── Hero overrides ── */
+.hero-eyebrow {
+  font-family: 'Noto Serif Tibetan', serif;
+  font-size: 1rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.45em;
+  margin-bottom: 2.8rem;
+  opacity: 0;
+  animation: heroFade 1.4s 0.2s ease forwards;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 10vw, 8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--parchment);
+  margin-bottom: 0.2em;
+  opacity: 0;
+  animation: heroFade 1.6s 0.45s ease forwards;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* Khenpo name line — Tibetan only, smaller, beneath title */
+.hero-khenpo {
+  font-family: 'Noto Serif Tibetan', serif;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  color: rgba(201, 168, 76, 0.55);
+  letter-spacing: 0.25em;
+  margin-bottom: 0.6rem;
+  opacity: 0;
+  animation: heroFade 1.5s 0.7s ease forwards;
+}
+
+/* English name + tagline — one clean line */
+.hero-years {
+  font-family: 'Cormorant', serif;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: heroFade 1.5s 0.9s ease forwards;
+}
+
+/* Intro paragraph — tighter measure, more refined leading */
+.hero-intro {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.92rem, 1.6vw, 1.08rem);
+  font-weight: 300;
+  line-height: 1.95;
+  color: rgba(242, 237, 228, 0.65);
+  max-width: 580px;
+  margin-bottom: 3.2rem;
+  opacity: 0;
+  animation: heroFade 1.5s 1.1s ease forwards;
+  /* Optical indent for the em-dashes to read cleanly */
+  text-align: center;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: heroFade 1.5s 1.4s ease forwards;
+}
+</style>
+
+<!-- ═══ HERO HTML ═══ -->
 <section class="hero">
   <div class="hero-particles" id="particles"></div>
+
+  <!-- Tibetan canon title -->
   <div class="hero-eyebrow">༄༅། །བཀའ་འགྱུར།</div>
+
+  <!-- Main title -->
   <h1 class="hero-title">The Living<br><em>Canon</em></h1>
-  <div class="hero-subtitle"&nbsp;·&nbsp; མཁན་པོ་ཀུན་དགའ་རིན་ཆེན།</div>
-  <p class="hero-years">Khenpo Kunga Rinchen · A Seven-Year Journey Through the 108 Volumes</p>
-  <p class="hero-intro">
-    The most complete repository of the Buddha's wisdom exists in one living language: Tibetan. 
-    Sanskrit is gone. Monasteries are endangered. A Khenpo — one of the rarest human bridges between 
-    the ancient canon and the modern world — now brings these teachings to all humanity, freely, before they are lost.
+
+  <!-- Tibetan name, subdued -->
+  <div class="hero-khenpo">མཁན་པོ་ཀུན་དགའ་རིན་ཆེན།</div>
+
+  <!-- English name + descriptor, italic serif -->
+  <p class="hero-years">
+    Khenpo Kunga Rinchen &nbsp;·&nbsp; A Seven-Year Journey Through the 108 Volumes
   </p>
+
+  <!-- Intro body -->
+  <p class="hero-intro">
+    The most complete repository of the Buddha's wisdom
+    exists in one living language: Tibetan.
+    Sanskrit is gone. Monasteries are endangered.
+    A Khenpo — one of the rarest human bridges between
+    the ancient canon and the modern world — now brings
+    these teachings to all humanity, freely,
+    before they are lost.
+  </p>
+
+  <!-- CTAs -->
   <div class="hero-cta-group">
-    <a href="#join" class="btn btn-gold">Join the Reading · Free</a>
+    <a href="#join" class="btn btn-gold">Join the Reading &nbsp;·&nbsp; Free</a>
     <a href="#why-matters" class="btn btn-outline">Why This Matters</a>
   </div>
+
+  <!-- Scroll nudge -->
   <div class="scroll-indicator">
     <span>Scroll</span>
     <div class="scroll-line-anim"></div>
