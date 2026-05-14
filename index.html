@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Living Canon — A 7-Year Journey Through the Words of the Buddha</title>
+<title>The Living Canon — Khenpo Kunga Rinchen · 108 Volumes of the Buddha</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+Tibetan:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -31,87 +31,39 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--parchment);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--parchment);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ━━━ UTILITIES ━━━ */
 .container{max-width:1140px;margin:0 auto;padding:0 clamp(1.5rem,4vw,3rem)}
 .container-narrow{max-width:800px;margin:0 auto;padding:0 clamp(1.5rem,4vw,3rem)}
 
 /* ━━━ HERO ━━━ */
 .hero{
-  min-height:100vh;min-height:100dvh;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;position:relative;padding:2rem;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(201,168,76,0.05) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(122,46,63,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(201,168,76,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(122,46,63,0.05) 0%, transparent 60%),
     var(--deep);
 }
-
-/* Floating Tibetan particles */
 .hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.particle{
-  position:absolute;font-family:'Noto Serif Tibetan',serif;
-  color:var(--gold);opacity:0;
-  animation:floatUp linear infinite;
-}
-@keyframes floatUp{
-  0%{transform:translateY(100vh) rotate(0deg);opacity:0}
-  10%{opacity:0.06}
-  90%{opacity:0.06}
-  100%{transform:translateY(-10vh) rotate(15deg);opacity:0}
-}
+.particle{position:absolute;font-family:'Noto Serif Tibetan',serif;color:var(--gold);opacity:0;animation:floatUp linear infinite;}
+@keyframes floatUp{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:0.07}90%{opacity:0.07}100%{transform:translateY(-10vh) rotate(15deg);opacity:0}}
 
-.hero-eyebrow{
-  font-family:'Noto Serif Tibetan',serif;font-size:1.1rem;
-  color:var(--gold-dim);letter-spacing:0.5em;margin-bottom:2.5rem;
-  opacity:0;animation:heroFade 1.5s 0.2s ease forwards;
-}
-
-.hero-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.8rem,9vw,7.5rem);font-weight:400;
-  line-height:1;letter-spacing:-0.03em;
-  color:var(--parchment);margin-bottom:0.15em;
-  opacity:0;animation:heroFade 1.6s 0.5s ease forwards;
-}
+.hero-eyebrow{font-family:'Noto Serif Tibetan',serif;font-size:1.3rem;color:var(--gold-dim);letter-spacing:0.3em;margin-bottom:2rem;opacity:0;animation:heroFade 1.5s 0.2s ease forwards;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,9vw,7.5rem);font-weight:400;line-height:1;letter-spacing:-0.03em;color:var(--parchment);margin-bottom:0.15em;opacity:0;animation:heroFade 1.6s 0.5s ease forwards;}
 .hero-title em{font-style:italic;color:var(--gold)}
+.hero-subtitle{font-family:'Noto Serif Tibetan',serif;font-size:clamp(0.85rem,1.5vw,1.05rem);color:var(--gold-dim);letter-spacing:0.2em;margin-bottom:0.6rem;opacity:0;animation:heroFade 1.6s 0.7s ease forwards;}
+.hero-years{font-family:'Cormorant',serif;font-size:clamp(1rem,2.5vw,1.5rem);font-weight:300;font-style:italic;color:var(--muted);letter-spacing:0.15em;margin-bottom:2.5rem;opacity:0;animation:heroFade 1.6s 0.9s ease forwards;}
+.hero-intro{font-size:clamp(0.95rem,1.8vw,1.15rem);line-height:1.85;font-weight:300;color:rgba(242,237,228,0.75);max-width:640px;margin-bottom:3rem;opacity:0;animation:heroFade 1.6s 1.1s ease forwards;}
+.hero-cta-group{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:heroFade 1.6s 1.4s ease forwards;}
 
-.hero-years{
-  font-family:'Cormorant',serif;font-size:clamp(1rem,2.5vw,1.5rem);
-  font-weight:300;font-style:italic;color:var(--muted);
-  letter-spacing:0.15em;margin-bottom:3rem;
-  opacity:0;animation:heroFade 1.6s 0.8s ease forwards;
-}
-
-.hero-intro{
-  font-size:clamp(0.95rem,1.8vw,1.15rem);line-height:1.85;
-  font-weight:300;color:rgba(242,237,228,0.7);max-width:620px;
-  margin-bottom:3rem;
-  opacity:0;animation:heroFade 1.6s 1s ease forwards;
-}
-
-.hero-cta-group{
-  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
-  opacity:0;animation:heroFade 1.6s 1.3s ease forwards;
-}
-
-.btn{
-  display:inline-flex;align-items:center;gap:0.6rem;
-  padding:1rem 2.5rem;font-size:0.75rem;letter-spacing:0.3em;
-  text-transform:uppercase;font-weight:600;text-decoration:none;
-  transition:all 0.5s cubic-bezier(0.23,1,0.32,1);cursor:pointer;border:none;
-}
+.btn{display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.5rem;font-size:0.75rem;letter-spacing:0.3em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all 0.5s cubic-bezier(0.23,1,0.32,1);cursor:pointer;border:none;}
 .btn-gold{background:var(--gold);color:var(--ink)}
 .btn-gold:hover{background:var(--gold-bright);transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,168,76,0.25)}
 .btn-outline{border:1px solid rgba(201,168,76,0.4);color:var(--gold);background:transparent}
 .btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,0.06)}
 
-.scroll-indicator{
-  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
-  opacity:0;animation:heroFade 1s 2s ease forwards;
-}
+.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0;animation:heroFade 1s 2.2s ease forwards;}
 .scroll-indicator span{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-dim)}
 .scroll-line-anim{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold-dim),transparent);animation:scrollPulse 2s ease infinite}
 @keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
@@ -119,247 +71,161 @@ body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--parchme
 
 /* ━━━ SECTION SYSTEM ━━━ */
 section{padding:clamp(5rem,12vw,9rem) 0}
-.s-label{
-  font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;
-  font-weight:600;margin-bottom:1.8rem;display:flex;align-items:center;gap:1rem;
-}
+.s-label{font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;font-weight:600;margin-bottom:1.8rem;display:flex;align-items:center;gap:1rem;}
 .s-label::before{content:'';display:block;width:28px;height:1px;background:currentColor;opacity:0.5}
-.s-dark{background:var(--deep);color:var(--parchment)}
-.s-dark .s-label{color:var(--gold)}
-.s-night{background:var(--night);color:var(--parchment)}
-.s-night .s-label{color:var(--gold)}
-.s-light{background:var(--cream);color:var(--body)}
-.s-light .s-label{color:var(--maroon)}
-.s-parchment{background:var(--parchment);color:var(--body)}
-.s-parchment .s-label{color:var(--maroon)}
-.s-maroon{background:linear-gradient(160deg,var(--maroon-deep) 0%,var(--maroon) 100%);color:var(--parchment)}
-.s-maroon .s-label{color:var(--gold-bright)}
+.s-dark{background:var(--deep);color:var(--parchment)}.s-dark .s-label{color:var(--gold)}
+.s-night{background:var(--night);color:var(--parchment)}.s-night .s-label{color:var(--gold)}
+.s-light{background:var(--cream);color:var(--body)}.s-light .s-label{color:var(--maroon)}
+.s-parchment{background:var(--parchment);color:var(--body)}.s-parchment .s-label{color:var(--maroon)}
+.s-maroon{background:linear-gradient(160deg,var(--maroon-deep) 0%,var(--maroon) 100%);color:var(--parchment)}.s-maroon .s-label{color:var(--gold-bright)}
+.s-saffron{background:linear-gradient(160deg,#2a1500 0%,#3d1f00 100%);color:var(--parchment)}.s-saffron .s-label{color:var(--gold-bright)}
 
-.s-heading{
-  font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.4rem);
-  font-weight:400;line-height:1.15;margin-bottom:2rem;
-}
+.s-heading{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.4rem);font-weight:400;line-height:1.15;margin-bottom:2rem;}
 .s-light .s-heading,.s-parchment .s-heading{color:var(--ink)}
-
-.s-body{font-size:0.95rem;line-height:1.9;font-weight:300;max-width:660px}
+.s-body{font-size:0.95rem;line-height:1.9;font-weight:300;max-width:680px}
 .s-body strong{font-weight:600}
 .s-body+.s-body{margin-top:1.2rem}
 
-/* ━━━ MILESTONE RING ━━━ */
-.milestone-row{
-  display:grid;grid-template-columns:240px 1fr;gap:clamp(2rem,6vw,5rem);
-  align-items:center;margin-top:3rem;
-}
-@media(max-width:700px){.milestone-row{grid-template-columns:1fr;justify-items:center;text-align:center}}
+/* ━━━ BIG STAT ROW ━━━ */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.08);margin-top:4rem;margin-bottom:1rem}
+@media(max-width:700px){.stat-row{grid-template-columns:1fr}}
+.stat-card{background:var(--night);padding:2.5rem 2rem;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4rem);color:var(--gold);font-weight:400;line-height:1}
+.stat-unit{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-dim);margin-top:0.4rem}
+.stat-desc{font-size:0.8rem;color:var(--muted);margin-top:0.8rem;line-height:1.7;max-width:200px;margin-left:auto;margin-right:auto}
 
-.ring-wrap{position:relative;width:200px;height:200px}
-.ring-svg{width:100%;height:100%;transform:rotate(-90deg)}
-.ring-track{fill:none;stroke:rgba(201,168,76,0.1);stroke-width:6}
-.ring-fill{
-  fill:none;stroke:var(--gold);stroke-width:6;
-  stroke-linecap:round;stroke-dasharray:565.48;
-  stroke-dashoffset:565.48;transition:stroke-dashoffset 2s cubic-bezier(0.23,1,0.32,1);
-}
-.ring-fill.animated{stroke-dashoffset:282.74}
-.ring-center{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-}
-.ring-pct{font-family:'Playfair Display',serif;font-size:3rem;font-weight:500;color:var(--gold);line-height:1}
-.ring-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
+/* ━━━ IMPORTANCE GRID ━━━ */
+.importance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.imp-card{padding:2.5rem;border:1px solid rgba(201,168,76,0.1);position:relative;overflow:hidden;transition:border-color 0.4s}
+.imp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);opacity:0;transition:opacity 0.4s}
+.imp-card:hover{border-color:rgba(201,168,76,0.3)}.imp-card:hover::before{opacity:1}
+.imp-icon{font-family:'Noto Serif Tibetan',serif;font-size:1.6rem;color:var(--gold-dim);margin-bottom:1.2rem}
+.imp-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;color:var(--parchment);margin-bottom:0.8rem}
+.imp-body{font-size:0.84rem;line-height:1.85;color:var(--muted)}
 
-.milestone-text .s-body{max-width:500px}
+/* ━━━ LANGUAGE SECTION ━━━ */
+.lang-split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;overflow:hidden}
+@media(max-width:700px){.lang-split{grid-template-columns:1fr}}
+.lang-card{padding:clamp(2rem,4vw,3.5rem)}
+.lang-dead{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.04)}
+.lang-alive{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.15)}
+.lang-tag{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;font-weight:700;padding:0.3rem 0.8rem;margin-bottom:1.2rem;display:inline-block}
+.tag-dead{background:rgba(255,255,255,0.06);color:var(--muted)}
+.tag-alive{background:var(--gold);color:var(--ink)}
+.lang-name{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:0.8rem;line-height:1.1}
+.lang-dead .lang-name{color:rgba(242,237,228,0.4);text-decoration:line-through;text-decoration-color:rgba(242,237,228,0.2)}
+.lang-alive .lang-name{color:var(--parchment)}
+.lang-body{font-size:0.85rem;line-height:1.85;color:var(--muted)}
+.lang-alive .lang-body{color:rgba(242,237,228,0.75)}
+.tibetan-script{font-family:'Noto Serif Tibetan',serif;font-size:1.8rem;color:var(--gold);margin-top:1.5rem;line-height:2;letter-spacing:0.1em}
 
-/* ━━━ CREDENTIAL STRIP ━━━ */
-.credentials{
-  display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:3rem;
-  padding-top:2rem;border-top:1px solid rgba(201,168,76,0.12);
+/* ━━━ DANGER SECTION ━━━ */
+.danger-quote{
+  font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,2.2rem);
+  font-weight:400;font-style:italic;line-height:1.5;
+  color:var(--parchment);max-width:750px;margin-bottom:2.5rem;
+  padding-left:1.8rem;border-left:3px solid var(--maroon);
 }
-.cred{display:flex;align-items:flex-start;gap:0.8rem}
-.cred-icon{
-  width:36px;height:36px;border:1px solid rgba(201,168,76,0.2);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  font-family:'Noto Serif Tibetan',serif;font-size:0.85rem;color:var(--gold-dim);
-}
-.cred-text{font-size:0.8rem;line-height:1.6;color:var(--muted)}
-.cred-text strong{color:var(--parchment);font-weight:500;display:block}
+.danger-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:rgba(122,46,63,0.15);margin-top:3rem}
+.danger-card{background:var(--maroon-deep);padding:2rem;transition:background 0.4s}
+.danger-card:hover{background:var(--maroon)}
+.danger-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;margin-bottom:0.6rem;color:var(--parchment)}
+.danger-card p{font-size:0.8rem;line-height:1.8;color:rgba(242,237,228,0.65)}
+.danger-icon{font-size:1.1rem;margin-bottom:1rem;opacity:0.7}
 
-/* ━━━ 7-YEAR TIMELINE ━━━ */
+/* ━━━ RINCHEN SECTION ━━━ */
+.rinchen-wrap{display:grid;grid-template-columns:1fr 2fr;gap:clamp(3rem,6vw,6rem);align-items:start;margin-top:3rem}
+@media(max-width:700px){.rinchen-wrap{grid-template-columns:1fr}}
+.rinchen-emblem{
+  width:180px;height:180px;border:2px solid rgba(201,168,76,0.2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(201,168,76,0.04);
+}
+.rinchen-tib{font-family:'Noto Serif Tibetan',serif;font-size:2.2rem;color:var(--gold);line-height:1.4}
+.rinchen-name-en{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-top:0.8rem}
+.rinchen-text .s-heading{margin-bottom:0.5rem}
+.rinchen-title{font-family:'Cormorant',serif;font-size:1.1rem;font-style:italic;color:var(--gold-dim);margin-bottom:1.5rem}
+.rinchen-credentials{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.r-cred{display:flex;gap:1rem;align-items:flex-start}
+.r-cred-dot{width:8px;height:8px;background:var(--gold-dim);flex-shrink:0;margin-top:0.5rem;transform:rotate(45deg)}
+.r-cred-text{font-size:0.85rem;line-height:1.7;color:var(--muted)}
+.r-cred-text strong{color:var(--parchment);font-weight:500;display:block;font-size:0.9rem}
+
+/* ━━━ TIMELINE ━━━ */
 .timeline{position:relative;margin-top:4rem}
-.timeline-line{
-  position:absolute;left:29px;top:0;bottom:0;width:1px;
-  background:linear-gradient(to bottom,transparent,var(--gold-dim) 5%,var(--gold-dim) 95%,transparent);
-}
-.tl-year{
-  position:relative;padding-left:80px;padding-bottom:clamp(2.5rem,5vw,3.5rem);
-}
+.timeline-line{position:absolute;left:29px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold-dim) 5%,var(--gold-dim) 95%,transparent)}
+.tl-year{position:relative;padding-left:80px;padding-bottom:clamp(2.5rem,5vw,3.5rem)}
 .tl-year:last-child{padding-bottom:0}
-.tl-dot{
-  position:absolute;left:20px;top:6px;width:19px;height:19px;
-  border:2px solid var(--gold-dim);border-radius:50%;background:var(--deep);
-  transition:all 0.4s ease;z-index:1;
-}
+.tl-dot{position:absolute;left:20px;top:6px;width:19px;height:19px;border:2px solid var(--gold-dim);border-radius:50%;background:var(--deep);transition:all 0.4s ease;z-index:1}
 .tl-year:hover .tl-dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 20px rgba(201,168,76,0.3)}
-.tl-number{
-  font-family:'Playfair Display',serif;font-size:0.8rem;font-weight:600;
-  color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem;
-}
-.tl-title{
-  font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.5rem);
-  font-weight:400;color:var(--parchment);margin-bottom:0.3rem;line-height:1.3;
-}
-.tl-sanskrit{
-  font-family:'Cormorant',serif;font-size:0.9rem;font-style:italic;
-  color:var(--gold-dim);margin-bottom:0.7rem;
-}
-.tl-desc{font-size:0.85rem;line-height:1.8;color:var(--muted);max-width:560px}
+.tl-number{font-family:'Playfair Display',serif;font-size:0.8rem;font-weight:600;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem}
+.tl-title{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.5rem);font-weight:400;color:var(--parchment);margin-bottom:0.3rem;line-height:1.3}
+.tl-sanskrit{font-family:'Cormorant',serif;font-size:0.9rem;font-style:italic;color:var(--gold-dim);margin-bottom:0.7rem}
+.tl-desc{font-size:0.85rem;line-height:1.85;color:var(--muted);max-width:580px}
 .tl-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.8rem}
-.tl-tag{
-  font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;
-  padding:0.3rem 0.7rem;border:1px solid rgba(201,168,76,0.15);color:var(--gold-dim);font-weight:500;
-}
+.tl-tag{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 0.7rem;border:1px solid rgba(201,168,76,0.15);color:var(--gold-dim);font-weight:500}
 
-/* ━━━ RHYTHM SECTION ━━━ */
-.rhythm-layout{
-  display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;
-  border:1px solid rgba(10,8,6,0.08);overflow:hidden;
-}
+/* ━━━ WEEKLY RHYTHM ━━━ */
+.rhythm-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;border:1px solid rgba(10,8,6,0.08);overflow:hidden}
 @media(max-width:700px){.rhythm-layout{grid-template-columns:1fr}}
-
 .rhythm-card{padding:clamp(2rem,4vw,3rem)}
 .rhythm-card-dark{background:var(--ink);color:var(--parchment)}
 .rhythm-card-light{background:var(--cream)}
-.rhythm-card h3{
-  font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;
-  margin-bottom:1rem;
-}
-.rhythm-card-dark h3{color:var(--parchment)}
-.rhythm-card-light h3{color:var(--ink)}
+.rhythm-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:1rem}
+.rhythm-card-dark h3{color:var(--parchment)}.rhythm-card-light h3{color:var(--ink)}
 .rhythm-card p{font-size:0.88rem;line-height:1.85;font-weight:300}
-.rhythm-card-dark p{color:var(--muted)}
-.rhythm-card-light p{color:var(--body)}
-
+.rhythm-card-dark p{color:var(--muted)}.rhythm-card-light p{color:var(--body)}
 .session-visual{margin-top:2rem}
 .session-row{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.8rem}
 .session-bar-track{flex:1;height:6px;background:rgba(242,237,228,0.06);border-radius:3px;overflow:hidden}
-.session-bar-fill{height:100%;border-radius:3px;transition:width 1s ease}
-.session-label{font-size:0.7rem;color:var(--muted);width:120px;flex-shrink:0}
+.session-bar-fill{height:100%;border-radius:3px}
+.session-label{font-size:0.7rem;color:var(--muted);width:140px;flex-shrink:0}
 .session-time{font-size:0.7rem;color:var(--gold-dim);width:50px;text-align:right;flex-shrink:0}
 
-/* ━━━ FUNDING SECTION ━━━ */
-.funding-reason{
-  font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,1.8rem);
-  font-weight:400;font-style:italic;line-height:1.5;
-  color:var(--parchment);max-width:700px;margin-bottom:2.5rem;
-  padding-left:1.5rem;border-left:2px solid var(--gold-dim);
-}
+/* ━━━ JOIN SECTION ━━━ */
+.join-ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+.join-card{border:1px solid rgba(201,168,76,0.12);padding:2.5rem 2rem;position:relative;transition:all 0.5s ease;background:rgba(255,255,255,0.015)}
+.join-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-4px)}
+.join-card.featured{border-color:var(--gold-dim);background:rgba(201,168,76,0.04)}
+.join-icon{font-family:'Noto Serif Tibetan',serif;font-size:1.5rem;color:var(--gold-dim);margin-bottom:1.2rem}
+.join-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--parchment);margin-bottom:0.8rem}
+.join-desc{font-size:0.85rem;line-height:1.8;color:var(--muted);margin-bottom:1.8rem}
+.join-features{list-style:none;margin-bottom:2rem}
+.join-features li{font-size:0.82rem;line-height:1.7;color:var(--muted);padding:0.35rem 0;padding-left:1.3rem;position:relative}
+.join-features li::before{content:'✦';position:absolute;left:0;color:var(--gold-dim);font-size:0.6rem;top:0.55rem}
+.join-card .btn{width:100%;justify-content:center;padding:0.9rem 1.5rem}
 
-.funding-uses{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1px;background:rgba(201,168,76,0.08);margin-top:2.5rem;
-}
-.fund-use{background:var(--maroon-deep);padding:2rem;transition:background 0.4s ease}
-.fund-use:hover{background:var(--maroon)}
-.fund-use-icon{font-size:1.3rem;margin-bottom:1rem;opacity:0.8}
-.fund-use h4{
-  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;
-  margin-bottom:0.6rem;
-}
-.fund-use p{font-size:0.8rem;line-height:1.75;color:rgba(242,237,228,0.7)}
-
-/* ━━━ PATRON TIERS ━━━ */
-.tiers{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1.5rem;margin-top:3rem;
-}
-.tier{
-  border:1px solid rgba(201,168,76,0.12);padding:2.5rem 2rem;
-  position:relative;transition:all 0.5s ease;background:rgba(255,255,255,0.015);
-}
-.tier:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-4px)}
-.tier.featured{border-color:var(--gold-dim);background:rgba(201,168,76,0.04)}
-.tier.featured::before{
-  content:'Most Popular';position:absolute;top:-0.6rem;left:2rem;
-  font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;
-  font-weight:600;color:var(--ink);background:var(--gold);padding:0.2rem 0.8rem;
-}
-.tier-name{
-  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;
-  color:var(--parchment);margin-bottom:0.3rem;
-}
-.tier-price{
-  font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:500;
-  color:var(--gold);margin-bottom:0.2rem;line-height:1;
-}
-.tier-price span{font-size:0.85rem;font-weight:400;color:var(--muted)}
-.tier-period{font-size:0.7rem;color:var(--muted);margin-bottom:1.5rem}
-.tier-features{list-style:none;margin-bottom:2rem}
-.tier-features li{
-  font-size:0.82rem;line-height:1.7;color:var(--muted);
-  padding:0.35rem 0;padding-left:1.3rem;position:relative;
-}
-.tier-features li::before{
-  content:'✦';position:absolute;left:0;color:var(--gold-dim);font-size:0.6rem;top:0.55rem;
-}
-.tier .btn{width:100%;justify-content:center;padding:0.9rem 1.5rem}
+/* ━━━ MILESTONE RING ━━━ */
+.milestone-row{display:grid;grid-template-columns:220px 1fr;gap:clamp(2rem,6vw,5rem);align-items:center;margin-top:3.5rem}
+@media(max-width:700px){.milestone-row{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.ring-wrap{position:relative;width:200px;height:200px}
+.ring-svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring-track{fill:none;stroke:rgba(201,168,76,0.1);stroke-width:6}
+.ring-fill{fill:none;stroke:var(--gold);stroke-width:6;stroke-linecap:round;stroke-dasharray:565.48;stroke-dashoffset:565.48;transition:stroke-dashoffset 2s cubic-bezier(0.23,1,0.32,1)}
+.ring-fill.animated{stroke-dashoffset:282.74}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-pct{font-family:'Playfair Display',serif;font-size:3rem;font-weight:500;color:var(--gold);line-height:1}
+.ring-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
 
 /* ━━━ FINAL CTA ━━━ */
-.final-cta{
-  text-align:center;padding:clamp(6rem,15vw,12rem) 2rem;
-  background:
-    radial-gradient(ellipse 70% 50% at 50% 60%, rgba(201,168,76,0.06) 0%, transparent 70%),
-    var(--deep);
-}
-.final-ornament{
-  font-family:'Noto Serif Tibetan',serif;font-size:1.8rem;
-  color:var(--gold-dim);margin-bottom:2rem;opacity:0.5;letter-spacing:0.3em;
-}
-.final-heading{
-  font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4.5rem);
-  font-weight:400;line-height:1.1;margin-bottom:1.5rem;
-}
+.final-cta{text-align:center;padding:clamp(6rem,15vw,12rem) 2rem;background:radial-gradient(ellipse 70% 50% at 50% 60%, rgba(201,168,76,0.06) 0%, transparent 70%),var(--deep)}
+.final-ornament{font-family:'Noto Serif Tibetan',serif;font-size:1.8rem;color:var(--gold-dim);margin-bottom:2rem;opacity:0.5;letter-spacing:0.3em}
+.final-heading{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:400;line-height:1.1;margin-bottom:1.5rem}
 .final-heading em{font-style:italic;color:var(--gold)}
-.final-sub{
-  font-family:'Cormorant',serif;font-size:clamp(1rem,2vw,1.35rem);
-  font-weight:300;font-style:italic;color:var(--muted);
-  max-width:500px;margin:0 auto 3rem;line-height:1.7;
-}
+.final-sub{font-family:'Cormorant',serif;font-size:clamp(1rem,2vw,1.35rem);font-weight:300;font-style:italic;color:var(--muted);max-width:560px;margin:0 auto 3rem;line-height:1.7}
 
 /* ━━━ FOOTER ━━━ */
-footer{
-  text-align:center;padding:3.5rem 2rem;
-  border-top:1px solid rgba(201,168,76,0.08);background:var(--ink);
-}
-.footer-tibetan{
-  font-family:'Noto Serif Tibetan',serif;font-size:1.1rem;
-  color:var(--gold-dim);margin-bottom:0.8rem;letter-spacing:0.2em;
-}
+footer{text-align:center;padding:3.5rem 2rem;border-top:1px solid rgba(201,168,76,0.08);background:var(--ink)}
+.footer-tibetan{font-family:'Noto Serif Tibetan',serif;font-size:1.2rem;color:var(--gold-dim);margin-bottom:0.8rem;letter-spacing:0.2em}
 footer p{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;line-height:1.8}
-
-/* ━━━ DIVIDER ━━━ */
-.ornament-divider{
-  display:flex;align-items:center;justify-content:center;gap:1.2rem;
-  padding:1rem 0;
-}
-.orn-line{width:50px;height:1px}
-.s-dark .orn-line,.s-night .orn-line{background:rgba(201,168,76,0.15)}
-.s-light .orn-line,.s-parchment .orn-line{background:rgba(122,46,63,0.15)}
-.orn-diamond{width:6px;height:6px;transform:rotate(45deg)}
-.s-dark .orn-diamond,.s-night .orn-diamond{background:var(--gold-dim)}
-.s-light .orn-diamond,.s-parchment .orn-diamond{background:var(--maroon)}
 
 /* ━━━ ANIMATIONS ━━━ */
 .reveal{opacity:0;transform:translateY(40px);transition:all 1s cubic-bezier(0.23,1,0.32,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.15s}
-.reveal-delay-2{transition-delay:0.3s}
-.reveal-delay-3{transition-delay:0.45s}
 
-/* ━━━ RESPONSIVE ━━━ */
 @media(max-width:600px){
-  .credentials{flex-direction:column;gap:1.5rem}
-  .tiers{grid-template-columns:1fr}
   .hero-cta-group{flex-direction:column;align-items:center}
+  .join-ways{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -370,14 +236,16 @@ footer p{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;line-height:1.
   <div class="hero-particles" id="particles"></div>
   <div class="hero-eyebrow">༄༅། །བཀའ་འགྱུར། །</div>
   <h1 class="hero-title">The Living<br><em>Canon</em></h1>
-  <p class="hero-years">A Seven-Year Journey Through the Words of the Buddha</p>
+  <div class="hero-subtitle">ཀུན་དགའ་རིན་ཆེན་མཁན་པོ། &nbsp;·&nbsp; མཁན་པོ་ཀུན་དགའ་རིན་ཆེན།</div>
+  <p class="hero-years">Khenpo Kunga Rinchen · A Seven-Year Journey Through the 108 Volumes</p>
   <p class="hero-intro">
-    For the first time in history, half of the Kangyur — the 108 volumes of the Buddha's direct teachings — exists in English. 
-    Join a global community reading every completed page, together, at a contemplative pace of just 12 pages a day.
+    The most complete repository of the Buddha's wisdom exists in one living language: Tibetan. 
+    Sanskrit is gone. Monasteries are endangered. A Khenpo — one of the rarest human bridges between 
+    the ancient canon and the modern world — now brings these teachings to all humanity, freely, before they are lost.
   </p>
   <div class="hero-cta-group">
-    <a href="#patron" class="btn btn-gold">Become a Patron</a>
-    <a href="#journey" class="btn btn-outline">Explore the Journey</a>
+    <a href="#join" class="btn btn-gold">Join the Reading · Free</a>
+    <a href="#why-matters" class="btn btn-outline">Why This Matters</a>
   </div>
   <div class="scroll-indicator">
     <span>Scroll</span>
@@ -385,18 +253,36 @@ footer p{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;line-height:1.
   </div>
 </section>
 
-<!-- ═══════════════════ THE INVITATION ═══════════════════ -->
-<section class="s-dark">
+<!-- ═══════════════════ THE 108 VOLUMES ═══════════════════ -->
+<section class="s-dark" id="why-matters">
   <div class="container">
     <div class="reveal">
-      <div class="s-label">The Invitation</div>
-      <h2 class="s-heading">The beating heart of the<br>Tibetan Buddhist tradition —<br>now within reach.</h2>
+      <div class="s-label">The Sacred Number</div>
+      <h2 class="s-heading">108 volumes.<br>The direct words<br>of the <em style="font-style:italic;color:var(--gold)">Buddha</em>.</h2>
       <p class="s-body">
-        For centuries, the Kangyur has lived behind the twin barriers of classical Tibetan and monastic walls — studied meticulously by scholars, yet remaining beyond the reach of the everyday practitioner. Its 108 volumes contain the direct teachings of the Buddha: the foundational wisdom that gave rise to every lineage, every practice, every aspiration toward awakening.
+        The Kangyur — <em>Kah-gyur</em>, "the translated words" — is not a collection about the Buddha. It is the Buddha speaking directly. Every line is a teaching given in a specific moment, to a specific being, for a specific liberation. Its 108 volumes contain sūtras, tantras, and the Vinaya: the complete living record of awakened speech across decades of the Buddha's ministry.
       </p>
-      <p class="s-body" style="margin-top:1.2rem;">
-        Today, thanks to historic and ongoing translation efforts, a profound milestone has been reached. We now have the means — and the moment — to bring these words to the world.
+      <p class="s-body">
+        <strong>108 is not accidental.</strong> In Buddhist cosmology, 108 represents the complete reckoning of human experience — the 6 sense faculties meeting 3 time periods across 2 modes of perception multiplied by 3 emotional responses and 3 levels of mind. The number is the map of the entire teaching held within the teachings themselves.
       </p>
+    </div>
+
+    <div class="stat-row reveal">
+      <div class="stat-card">
+        <div class="stat-num">108</div>
+        <div class="stat-unit">Volumes of Sacred Text</div>
+        <div class="stat-desc">The complete Kangyur — direct words of the Buddha, preserved without interruption</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">~70,000</div>
+        <div class="stat-unit">Pages of Buddha's Teaching</div>
+        <div class="stat-desc">The largest preserved collection of the Buddha's direct words on earth</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1,200+</div>
+        <div class="stat-unit">Years in Tibetan Custody</div>
+        <div class="stat-desc">Translated, preserved, memorized, and transmitted by Tibetan monks since the 8th century</div>
+      </div>
     </div>
 
     <div class="milestone-row reveal">
@@ -407,43 +293,227 @@ footer p{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;line-height:1.
         </svg>
         <div class="ring-center">
           <div class="ring-pct">50%</div>
-          <div class="ring-label">Translated</div>
+          <div class="ring-label">In English</div>
         </div>
       </div>
-      <div class="milestone-text">
+      <div>
         <p class="s-body">
-          <strong>Exactly half of the Kangyur has now been rigorously translated into English.</strong> This is a historic moment — tens of thousands of pages, reviewed by teams of scholars and translators working across decades. To honor this milestone, <em>The Living Canon</em> will read every single completed page over the next seven years.
+          <strong>A historic moment: exactly half of the Kangyur now exists in English</strong>, thanks to the 84000 project — tens of thousands of pages rendered across decades by teams of scholars. But translation alone is not enough. Someone who has lived inside these texts — in the original Tibetan — must guide the world through what they mean.
         </p>
-        <p class="s-body" style="margin-top:1rem;color:var(--gold-dim);font-size:0.85rem;">
-          Source: 84000 — Translating the Words of the Buddha · ~35,000 pages now in English
+        <p class="s-body" style="margin-top:1rem;">
+          <em>The Living Canon</em> reads every completed page over seven years: 12 pages a day, six days a week, always anchored in the Tibetan original, guided by a Khenpo who has devoted his life to these volumes.
         </p>
+        <p class="s-body" style="margin-top:1rem;color:var(--gold-dim);font-size:0.82rem;">Source: 84000 — Translating the Words of the Buddha</p>
+      </div>
+    </div>
+
+    <div class="importance-grid reveal">
+      <div class="imp-card">
+        <div class="imp-icon">༄</div>
+        <div class="imp-title">Not Commentary — The Source Itself</div>
+        <div class="imp-body">Most practitioners encounter the Buddha's teachings through commentaries, lineage teachers, or meditation manuals. The Kangyur is different: it is the primary source — the raw, unmediated, direct speech of the awakened mind. Reading it is like hearing the Buddha in the room.</div>
+      </div>
+      <div class="imp-card">
+        <div class="imp-icon">ༀ</div>
+        <div class="imp-title">Every Tradition's Root</div>
+        <div class="imp-body">Whether Zen, Theravāda, Vajrayāna, or Pure Land — every Buddhist school traces its authority ultimately to these 108 volumes. The Kangyur is the common treasury of all Buddhism, the bedrock beneath every practice, every lineage, every vow.</div>
+      </div>
+      <div class="imp-card">
+        <div class="imp-icon">ཀ</div>
+        <div class="imp-title">An Incomparable Breadth</div>
+        <div class="imp-body">The 108 volumes move from foundational ethics to quantum-like teachings on emptiness; from vast Bodhisattva cosmology to the precise mechanics of tantric transformation. No single human life could read all of it alone — this journey does it together.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════ YOUR GUIDE ═══════════════════ -->
+<!-- ═══════════════════ TIBETAN: THE LAST LIVING VESSEL ═══════════════════ -->
 <section class="s-night">
   <div class="container">
     <div class="reveal">
-      <div class="s-label">Your Guide</div>
-      <h2 class="s-heading">A career devoted to these texts.</h2>
+      <div class="s-label">The Last Living Language</div>
+      <h2 class="s-heading">Sanskrit is gone.<br>Tibetan <em style="font-style:italic;color:var(--gold)">lives.</em></h2>
       <p class="s-body">
-        This is not a race, nor a dry academic lecture. As we read, I will be referencing the original classical Tibetan source texts — navigating the complex syntax and historical contexts so that you can simply focus on the meaning. My role is to serve as your guide and filter, drawing from a lifetime of immersion in these teachings.
+        The Buddha spoke in Pali and Sanskrit. Pali survives as a liturgical language; Sanskrit is functionally extinct — no living culture breathes it as a mother tongue, no child learns it in the home. Yet the full depth of Buddhist canonical literature, including vast tantric scriptures never composed in any other tongue, exists in one language still alive, still spoken, still embodied: <strong>classical Tibetan</strong>.
       </p>
     </div>
-    <div class="credentials reveal">
-      <div class="cred">
-        <div class="cred-icon">ཀ</div>
-        <div class="cred-text"><strong>Ph.D. in Buddhist Studies</strong>Specializing in Tibetan canonical literature and translation methodology</div>
+
+    <div class="lang-split reveal">
+      <div class="lang-card lang-dead">
+        <div class="lang-tag tag-dead">Extinct</div>
+        <div class="lang-name">Sanskrit</div>
+        <p class="lang-body">The original language of the Mahāyāna canon. No living community transmits it as a spoken tongue. Many Sanskrit originals of key Buddhist texts were destroyed and survive only because Tibetan translators made complete, rigorous translations in the 8th–12th centuries. To study the Sanskrit originals today is archaeological work — textual reconstruction without a living breath behind it.</p>
       </div>
-      <div class="cred">
-        <div class="cred-icon">ཁ</div>
-        <div class="cred-text"><strong>100+ Volumes Edited</strong>A career of hands-on work with ancient manuscripts and critical editions</div>
+      <div class="lang-card lang-alive">
+        <div class="lang-tag tag-alive">Living</div>
+        <div class="lang-name">Classical Tibetan</div>
+        <p class="lang-body">A language still spoken, still memorized, still taught — and still inhabited by a community of scholars who have devoted their entire lives to its sacred texts. Classical Tibetan is not a museum piece. It is the daily grammar of awakening for tens of thousands of monks and nuns who chant, debate, memorize, and transmit it right now. It is the last living window into the fullness of the Buddha's speech.</p>
+        <div class="tibetan-script">བཀའ་འགྱུར་<br>ཆོས་ཀྱི་འཁོར་ལོ།</div>
       </div>
-      <div class="cred">
-        <div class="cred-icon">ག</div>
-        <div class="cred-text"><strong>Decade of Teaching Mindfulness</strong>Bridging literary narrative with contemplative practice for modern audiences</div>
+    </div>
+
+    <div class="reveal" style="margin-top:3rem">
+      <p class="s-body">
+        <strong>This is not merely a linguistic fact — it is an urgent civilizational reality.</strong> The beings who carry this language in their bodies — who can not only read classical Tibetan but who can hear its nuance, feel its rhythm, and trace its semantic layers across centuries of oral commentary — are a finite and aging community. Khenpo Kunga Rinchen is among them. The window is open now. It will not remain open forever.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MONASTERY IN DANGER ═══════════════════ -->
+<section class="s-maroon">
+  <div class="container">
+    <div class="reveal">
+      <div class="s-label">The Endangered Transmission</div>
+      <h2 class="s-heading">The monastery walls<br>that held this wisdom<br>are crumbling.</h2>
+      <div class="danger-quote">
+        "For over a thousand years, Tibetan monasteries were the libraries, universities, and hospitals of the spirit. Today, that system is under pressure it has never faced before."
+      </div>
+    </div>
+
+    <div class="danger-grid reveal">
+      <div class="danger-card">
+        <div class="danger-icon">⚑</div>
+        <h4>Political Displacement</h4>
+        <p>Tibetan Buddhism's greatest monastic institutions were destroyed or scattered across the 20th century. Rebuilt in exile, they carry on — but under conditions of profound uncertainty and fragility.</p>
+      </div>
+      <div class="danger-card">
+        <div class="danger-icon">◎</div>
+        <h4>A Thinning Lineage</h4>
+        <p>The generation of masters who memorized the Kangyur, who received transmission from previous masters, who can debate the most subtle philosophical points of the tantras — this generation is aging. The chain of living transmission is the most precious and the most fragile thing in Buddhism.</p>
+      </div>
+      <div class="danger-card">
+        <div class="danger-icon">◇</div>
+        <h4>Modernity's Pull</h4>
+        <p>Even where monasteries survive, young monks face competition from screens, from economic pressure, from a world that offers instant distraction. The monastic life of deep study requires radical commitment — and finding the next generation of Khenpos is not guaranteed.</p>
+      </div>
+      <div class="danger-card">
+        <div class="danger-icon">☸</div>
+        <h4>The Knowledge Inside the Walls</h4>
+        <p>The Kangyur was designed to be read, taught, and practiced within a living community of scholars. Much of its meaning — the oral commentary layer that makes sense of the text — has never been written down. When a Khenpo dies without transmitting, that commentary dies too.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:3.5rem">
+      <p class="s-body" style="max-width:720px">
+        <strong>This is why Khenpo Kunga Rinchen has made a radical choice:</strong> to bring what was inside the monastery walls into the open world — not diluted, not simplified, but transmitted in its full depth, to everyone, across every border. The Kangyur was given for all beings. Now it must reach all beings — before the living voices that know it best grow silent.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ KHENPO KUNGA RINCHEN ═══════════════════ -->
+<section class="s-dark">
+  <div class="container">
+    <div class="reveal">
+      <div class="s-label">Your Guide</div>
+    </div>
+    <div class="rinchen-wrap reveal">
+      <div>
+        <div class="rinchen-emblem">
+          <div class="rinchen-tib">ཀུན་དགའ་<br>རིན་ཆེན།</div>
+          <div class="rinchen-name-en">Khenpo Kunga Rinchen</div>
+        </div>
+      </div>
+      <div class="rinchen-text">
+        <h2 class="s-heading" style="margin-bottom:0.5rem">Khenpo Kunga Rinchen</h2>
+        <div class="rinchen-title">མཁན་པོ་ཀུན་དགའ་རིན་ཆེན་ — A Khenpo of the Living Tradition</div>
+        <p class="s-body">
+          A <em>Khenpo</em> is among the rarest titles in Tibetan Buddhism — equivalent to a doctorate in Buddhist philosophy, earned through years of rigorous monastic debate, memorization, and textual mastery. But it is more than an academic credential. A Khenpo has received the oral transmissions, the reading transmissions, and the explanatory transmissions of the texts. The knowledge lives in his body as much as in his mind.
+        </p>
+        <p class="s-body" style="margin-top:1rem">
+          Khenpo Kunga Rinchen's mission is singular and urgent: to carry the living knowledge of the Kangyur out of the monastery and into the world — not as heritage to be admired, but as wisdom to be practiced. He reads ahead in the Tibetan. He cross-references the commentarial tradition. He brings the oral layer that no translation can contain, making the teaching whole again for every practitioner who joins this journey.
+        </p>
+        <div class="rinchen-credentials">
+          <div class="r-cred">
+            <div class="r-cred-dot"></div>
+            <div class="r-cred-text"><strong>Khenpo Degree in Buddhist Philosophy</strong>Advanced mastery of Vinaya, Prajñāpāramitā, Madhyamaka, Abhidharma, and Tantra</div>
+          </div>
+          <div class="r-cred">
+            <div class="r-cred-dot"></div>
+            <div class="r-cred-text"><strong>Lifelong Immersion in Classical Tibetan</strong>100+ volumes of canonical and commentarial literature studied in original language</div>
+          </div>
+          <div class="r-cred">
+            <div class="r-cred-dot"></div>
+            <div class="r-cred-text"><strong>Oral Transmission Lineage Holder</strong>Received lineage transmissions of the Kangyur from living masters of the tradition</div>
+          </div>
+          <div class="r-cred">
+            <div class="r-cred-dot"></div>
+            <div class="r-cred-text"><strong>Global Teacher · Bridge to the World</strong>Committed to making the Kangyur accessible to all humanity — beyond monastery walls, across every border</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 7-YEAR TIMELINE ═══════════════════ -->
+<section class="s-night" id="journey">
+  <div class="container">
+    <div class="reveal">
+      <div class="s-label">The Seven-Year Map</div>
+      <h2 class="s-heading">From the first turning of<br>the wheel to the<br>esoteric tantras.</h2>
+      <p class="s-body" style="margin-bottom:1rem">
+        Over seven years, every completed page of the Kangyur in English — always read with the Tibetan original alongside, always interpreted with the living commentary layer that makes these ancient words ignite in modern understanding.
+      </p>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-line"></div>
+      <div class="tl-year">
+        <div class="tl-dot"></div>
+        <div class="tl-number">Year One — The Foundation</div>
+        <div class="tl-title">The Vinaya & the First Turning of the Wheel</div>
+        <div class="tl-sanskrit">Vinayavastu · Dharmacakra Pravartana Sūtra</div>
+        <p class="tl-desc">We begin where the Buddha began — with the monastic code and the foundational discourses that shaped the first sangha. The Four Noble Truths, the Eightfold Path, and the ethical bedrock of the entire 108-volume edifice. To understand the Kangyur is to first understand what the Buddha found most urgent to teach.</p>
+        <div class="tl-tags"><span class="tl-tag">Ethics</span><span class="tl-tag">Four Noble Truths</span><span class="tl-tag">12 pp/day</span></div>
+      </div>
+      <div class="tl-year">
+        <div class="tl-dot"></div>
+        <div class="tl-number">Year Two — Dependent Origination</div>
+        <div class="tl-title">The Sūtra Collections & Causality</div>
+        <div class="tl-sanskrit">Śālistamba Sūtra · Nidāna texts</div>
+        <p class="tl-desc">The sūtras that map dependent origination — how suffering arises, how it ceases, and how every moment of our experience is shaped by causes and conditions we can learn to understand and transform. These volumes are the Buddha as scientist of the mind.</p>
+        <div class="tl-tags"><span class="tl-tag">Causality</span><span class="tl-tag">Twelve Links</span><span class="tl-tag">12 pp/day</span></div>
+      </div>
+      <div class="tl-year">
+        <div class="tl-dot"></div>
+        <div class="tl-number">Year Three — The Perfection of Wisdom</div>
+        <div class="tl-title">The Heart Sūtra & the Prajñāpāramitā</div>
+        <div class="tl-sanskrit">Prajñāpāramitāhṛdaya · Aṣṭasāhasrikā</div>
+        <p class="tl-desc">The radical heart of the Mahāyāna. Emptiness not as negation but as liberation — the deconstruction of every fixed view and the opening of a mind vast enough to hold paradox as daily lived freedom. These texts cannot be read; they must be inhabited.</p>
+        <div class="tl-tags"><span class="tl-tag">Emptiness</span><span class="tl-tag">Śūnyatā</span><span class="tl-tag">13 pp/day</span></div>
+      </div>
+      <div class="tl-year">
+        <div class="tl-dot"></div>
+        <div class="tl-number">Year Four — Cutting Through Illusion</div>
+        <div class="tl-title">The Diamond Sūtra & the Bodhisattva Ideal</div>
+        <div class="tl-sanskrit">Vajracchedikā Prajñāpāramitā</div>
+        <p class="tl-desc">The Bodhisattva vow to liberate all beings — not one day, but now, in every action. The Diamond Sūtra turns the wisdom of Year Three into a way of being in the world: fully present, fully active, bound by nothing.</p>
+        <div class="tl-tags"><span class="tl-tag">Bodhisattva Path</span><span class="tl-tag">Non-attachment</span><span class="tl-tag">13 pp/day</span></div>
+      </div>
+      <div class="tl-year">
+        <div class="tl-dot"></div>
+        <div class="tl-number">Year Five — The Jewel Heap</div>
+        <div class="tl-title">The Mahāratnakūṭa Collection</div>
+        <div class="tl-sanskrit">Mahāratnakūṭa Sūtra</div>
+        <p class="tl-desc">Forty-nine independent sūtras, each addressed to a different audience, each revealing a different facet of the Buddha's skillful means. Ethics, devotion, purity, generosity, the nature of mind — the Kangyur's most diverse and practically rich volumes.</p>
+        <div class="tl-tags"><span class="tl-tag">Ethics</span><span class="tl-tag">Skillful Means</span><span class="tl-tag">12 pp/day</span></div>
+      </div>
+      <div class="tl-year">
+        <div class="tl-dot"></div>
+        <div class="tl-number">Year Six — The Flower Ornament</div>
+        <div class="tl-title">The Avataṃsaka & Visionary Cosmology</div>
+        <div class="tl-sanskrit">Avataṃsaka Sūtra · Gaṇḍavyūha</div>
+        <p class="tl-desc">The most visionary text in all of world literature. An infinite net of interpenetrating realities, the pilgrim Sudhana's journey through fifty-three teachers, and a cosmology that makes every boundary of the universe dissolve. This is the Kangyur at its most breathtaking.</p>
+        <div class="tl-tags"><span class="tl-tag">Cosmology</span><span class="tl-tag">Interpenetration</span><span class="tl-tag">13 pp/day</span></div>
+      </div>
+      <div class="tl-year">
+        <div class="tl-dot"></div>
+        <div class="tl-number">Year Seven — The Esoteric Foundation</div>
+        <div class="tl-title">The Tantra Collections</div>
+        <div class="tl-sanskrit">Kriyā · Caryā · Yoga · Anuttarayoga Tantra</div>
+        <p class="tl-desc">The crown of the Kangyur, and the section most inaccessible without a living guide. Ritual, visualization, mantra, and the transformation of every sense perception into awakened awareness. This is where the knowledge of the Tibetan monastery tradition is most irreplaceable — and most at risk of being lost.</p>
+        <div class="tl-tags"><span class="tl-tag">Tantra</span><span class="tl-tag">Transformation</span><span class="tl-tag">12 pp/day</span></div>
       </div>
     </div>
   </div>
@@ -453,22 +523,21 @@ footer p{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;line-height:1.
 <section class="s-light">
   <div class="container">
     <div class="reveal">
-      <div class="s-label">The Weekly Rhythm</div>
+      <div class="s-label">The Weekly Practice</div>
       <h2 class="s-heading">Six days of quiet reading.<br>One day of gathering.</h2>
     </div>
-
     <div class="rhythm-layout reveal">
       <div class="rhythm-card rhythm-card-light">
-        <h3>Monday — Saturday</h3>
-        <p>A manageable 12–13 pages of the English translation each day. Every reading is accompanied by a brief daily insight drawn from the original Tibetan — illuminating the nuances that translation alone cannot capture.</p>
-        <p style="margin-top:1rem;font-size:0.78rem;color:var(--maroon);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;">Contemplative Reading · Daily Insight</p>
+        <h3>Monday — Saturday · Reading Days</h3>
+        <p>A manageable 12–13 pages of the English translation each day. Each reading is accompanied by a brief daily insight drawn from the original Tibetan — a line, a nuance, a thread of oral commentary that translation cannot carry alone. The practice is contemplative, not academic. You read as a practitioner, not a scholar.</p>
+        <p style="margin-top:1rem;font-size:0.78rem;color:var(--maroon);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;">Contemplative Reading · Daily Tibetan Insight</p>
       </div>
       <div class="rhythm-card rhythm-card-dark">
-        <h3>Sunday — Live Gathering</h3>
-        <p>Every Sunday, we meet live on Zoom for 90 minutes. These sessions will not just summarize the text. We untangle the philosophical turning points, explore the rich narratives, and transition directly into guided analytical meditation.</p>
+        <h3>Sunday — Live Gathering on Zoom</h3>
+        <p>Every Sunday, the community meets live for 90 minutes. Not a summary — a deepening. Khenpo Kunga Rinchen unpacks the week's most essential passages, reveals what the Tibetan original says beneath the English, and guides the community into direct analytical meditation on what we have read.</p>
         <div class="session-visual">
           <div class="session-row">
-            <span class="session-label">Narrative Teaching</span>
+            <span class="session-label">Teaching & Tibetan depth</span>
             <div class="session-bar-track"><div class="session-bar-fill" style="width:50%;background:var(--maroon)"></div></div>
             <span class="session-time">45 min</span>
           </div>
@@ -488,221 +557,107 @@ footer p{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;line-height:1.
   </div>
 </section>
 
-<!-- ═══════════════════ 7-YEAR TIMELINE ═══════════════════ -->
-<section class="s-dark" id="journey">
+<!-- ═══════════════════ JOIN — FREE ═══════════════════ -->
+<section class="s-dark" id="join">
   <div class="container">
     <div class="reveal">
-      <div class="s-label">The Seven-Year Map</div>
-      <h2 class="s-heading">From the first turning of the<br>wheel to the esoteric tantras.</h2>
-      <p class="s-body" style="margin-bottom:1rem;">
-        Over seven years, we journey through the entire breadth of the Buddha's teachings as preserved in the Kangyur — foundational wisdom, visionary cosmology, profound ethics, and esoteric practice.
-      </p>
+      <div class="s-label">Join the Journey · Open to All</div>
+      <h2 class="s-heading">The Buddha's words belong<br>to all beings.<br>This reading is free.</h2>
+      <p class="s-body">The Kangyur was not given for a price. This journey honors that spirit. Every way of joining is open, and every level of engagement is welcome — whether you join a single Sunday session or commit to all seven years.</p>
     </div>
 
-    <div class="timeline reveal">
-      <div class="timeline-line"></div>
-
-      <div class="tl-year">
-        <div class="tl-dot"></div>
-        <div class="tl-number">Year One — The Foundation</div>
-        <div class="tl-title">The Vinaya & the First Turning of the Wheel</div>
-        <div class="tl-sanskrit">Vinayavastu · Dharmacakra Pravartana Sūtra</div>
-        <p class="tl-desc">We begin where the Buddha began — with the foundational discourses and the monastic code that shaped the earliest sangha. The Four Noble Truths, the Eightfold Path, and the ethical bedrock of the entire tradition.</p>
-        <div class="tl-tags"><span class="tl-tag">Ethics</span><span class="tl-tag">Four Noble Truths</span><span class="tl-tag">12 pp/day</span></div>
-      </div>
-
-      <div class="tl-year">
-        <div class="tl-dot"></div>
-        <div class="tl-number">Year Two — Dependent Origination</div>
-        <div class="tl-title">The Sūtra Collections & Causality</div>
-        <div class="tl-sanskrit">Śālistamba Sūtra · Nidāna texts</div>
-        <p class="tl-desc">Diving into the sūtra collections that map the web of dependent origination — karma, causality, and the twelve links. Here we learn to see how our actions shape reality and how to interrupt the cycle of suffering.</p>
-        <div class="tl-tags"><span class="tl-tag">Causality</span><span class="tl-tag">Twelve Links</span><span class="tl-tag">12 pp/day</span></div>
-      </div>
-
-      <div class="tl-year">
-        <div class="tl-dot"></div>
-        <div class="tl-number">Year Three — The Perfection of Wisdom</div>
-        <div class="tl-title">The Heart Sūtra & the Prajñāpāramitā</div>
-        <div class="tl-sanskrit">Prajñāpāramitāhṛdaya · Aṣṭasāhasrikā</div>
-        <p class="tl-desc">The radical heart of the Mahāyāna. We confront emptiness directly — deconstructing rigid views and learning to hold the paradox of form and formlessness as a lived, daily practice of wisdom and freedom.</p>
-        <div class="tl-tags"><span class="tl-tag">Emptiness</span><span class="tl-tag">Śūnyatā</span><span class="tl-tag">13 pp/day</span></div>
-      </div>
-
-      <div class="tl-year">
-        <div class="tl-dot"></div>
-        <div class="tl-number">Year Four — Cutting Through Illusion</div>
-        <div class="tl-title">The Diamond Sūtra & the Bodhisattva Ideal</div>
-        <div class="tl-sanskrit">Vajracchedikā Prajñāpāramitā</div>
-        <p class="tl-desc">Building on the wisdom of Year Three, we turn the diamond cutter on the self itself. Merit, generosity, and the Bodhisattva's vow to liberate all beings — living actively in the world without being bound by it.</p>
-        <div class="tl-tags"><span class="tl-tag">Bodhisattva Path</span><span class="tl-tag">Non-attachment</span><span class="tl-tag">13 pp/day</span></div>
-      </div>
-
-      <div class="tl-year">
-        <div class="tl-dot"></div>
-        <div class="tl-number">Year Five — The Jewel Heap</div>
-        <div class="tl-title">The Mahāratnakūṭa Collection</div>
-        <div class="tl-sanskrit">Mahāratnakūṭa Sūtra</div>
-        <p class="tl-desc">One of the most diverse and ethically rich collections in the Kangyur. Forty-nine independent sūtras exploring purity, devotion, skillful means, and the vast range of the Buddha's teachings to different audiences and capacities.</p>
-        <div class="tl-tags"><span class="tl-tag">Ethics</span><span class="tl-tag">Skillful Means</span><span class="tl-tag">12 pp/day</span></div>
-      </div>
-
-      <div class="tl-year">
-        <div class="tl-dot"></div>
-        <div class="tl-number">Year Six — The Flower Ornament</div>
-        <div class="tl-title">The Avataṃsaka & Visionary Cosmology</div>
-        <div class="tl-sanskrit">Avataṃsaka Sūtra · Gaṇḍavyūha</div>
-        <p class="tl-desc">The most visionary and vast text in all of Buddhism. An infinite net of interpenetrating realities, the pilgrim Sudhana's journey through fifty-three spiritual teachers, and a cosmology that shatters every boundary of scale and imagination.</p>
-        <div class="tl-tags"><span class="tl-tag">Cosmology</span><span class="tl-tag">Interpenetration</span><span class="tl-tag">13 pp/day</span></div>
-      </div>
-
-      <div class="tl-year">
-        <div class="tl-dot"></div>
-        <div class="tl-number">Year Seven — The Esoteric Foundation</div>
-        <div class="tl-title">The Tantra Collections</div>
-        <div class="tl-sanskrit">Kriyā · Caryā · Yoga · Anuttarayoga Tantra</div>
-        <p class="tl-desc">The culmination. We enter the esoteric dimension of the Kangyur — ritual, visualization, mantra, and the transformation of ordinary perception into awakened experience. A fitting crown to seven years of deepening practice.</p>
-        <div class="tl-tags"><span class="tl-tag">Tantra</span><span class="tl-tag">Transformation</span><span class="tl-tag">12 pp/day</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ WHY SUPPORT ═══════════════════ -->
-<section class="s-maroon">
-  <div class="container">
-    <div class="reveal">
-      <div class="s-label">Why Your Support Matters</div>
-      <h2 class="s-heading">You are not funding a reading group.<br>You are building a living archive.</h2>
-      <p class="funding-reason">
-        "Reading, analyzing, and translating the nuances of the Kangyur for a global audience of thousands requires immense, full-time dedication."
-      </p>
-    </div>
-
-    <div class="funding-uses reveal">
-      <div class="fund-use">
-        <div class="fund-use-icon">◎</div>
-        <h4>Weekly Study Guides</h4>
-        <p>Accessible, beautifully written modern commentaries — designed to bridge the gap between ancient manuscript and modern life, and to endure as a resource for generations.</p>
-      </div>
-      <div class="fund-use">
-        <div class="fund-use-icon">⊕</div>
-        <h4>Tibetan Scholarship</h4>
-        <p>Daily comparative work between the English translations and the original classical Tibetan, ensuring nothing is lost in the journey from source to understanding.</p>
-      </div>
-      <div class="fund-use">
-        <div class="fund-use-icon">◇</div>
-        <h4>Digital Infrastructure</h4>
-        <p>Professional Zoom hosting, video recording and archiving, website maintenance, and the platform that connects thousands of practitioners across every time zone.</p>
-      </div>
-      <div class="fund-use">
-        <div class="fund-use-icon">☸</div>
-        <h4>Full-Time Dedication</h4>
-        <p>Your patronage makes it possible to commit entirely — reading ahead in the Tibetan, preparing each session with care, and stewarding this community across seven transformative years.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PATRON TIERS ═══════════════════ -->
-<section class="s-dark" id="patron">
-  <div class="container">
-    <div class="reveal">
-      <div class="s-label">Become a Patron</div>
-      <h2 class="s-heading">Choose your level of support.</h2>
-      <p class="s-body">Every tier includes full access to the Sunday live sessions and the weekly written study guides. Your generosity directly sustains this seven-year journey.</p>
-    </div>
-
-    <div class="tiers reveal">
-      <div class="tier">
-        <div class="tier-name">Practitioner</div>
-        <div class="tier-price">$10 <span>/mo</span></div>
-        <div class="tier-period">$120 / year</div>
-        <ul class="tier-features">
-          <li>Live Sunday Zoom sessions every week</li>
-          <li>Written weekly study guide</li>
-          <li>Daily reading prompts & Tibetan insights</li>
-          <li>Access to the session recording archive</li>
+    <div class="join-ways reveal">
+      <div class="join-card">
+        <div class="join-icon">ཀ</div>
+        <div class="join-name">Daily Reader</div>
+        <div class="join-desc">Follow the daily reading on your own, at your own pace, with access to the reading schedule and daily Tibetan insights.</div>
+        <ul class="join-features">
+          <li>Complete 7-year reading calendar</li>
+          <li>Daily Tibetan insight notes</li>
+          <li>Access to the written weekly study guide</li>
+          <li>Community reading discussion thread</li>
         </ul>
-        <a href="#" class="btn btn-outline">Join as Practitioner</a>
+        <a href="#contact" class="btn btn-outline">Join as Daily Reader</a>
       </div>
 
-      <div class="tier featured">
-        <div class="tier-name">Patron of the Dharma</div>
-        <div class="tier-price">$25 <span>/mo</span></div>
-        <div class="tier-period">$300 / year</div>
-        <ul class="tier-features">
-          <li>Everything in Practitioner</li>
-          <li>Extended quarterly Q&A sessions</li>
-          <li>Downloadable PDF commentary library</li>
-          <li>Name acknowledged in the Living Archive</li>
-          <li>Priority access to retreat events</li>
+      <div class="join-card featured">
+        <div class="join-icon">ༀ</div>
+        <div class="join-name">Sunday Sangha</div>
+        <div class="join-desc">Join the live Zoom sessions every Sunday — the heart of the journey, where reading becomes teaching, and teaching becomes practice.</div>
+        <ul class="join-features">
+          <li>Live 90-minute Sunday sessions with Khenpo Kunga Rinchen</li>
+          <li>Session recordings for every week</li>
+          <li>Weekly written commentary and study guide</li>
+          <li>Daily reading schedule and Tibetan insights</li>
+          <li>Access to the full 7-year archive as it builds</li>
         </ul>
-        <a href="#" class="btn btn-gold">Join as Patron</a>
+        <a href="#contact" class="btn btn-gold">Join the Sunday Sangha</a>
       </div>
 
-      <div class="tier">
-        <div class="tier-name">Benefactor</div>
-        <div class="tier-price">$50 <span>/mo</span></div>
-        <div class="tier-period">$600 / year</div>
-        <ul class="tier-features">
-          <li>Everything in Patron of the Dharma</li>
-          <li>Monthly small-group discussion circle</li>
+      <div class="join-card">
+        <div class="join-icon">༄</div>
+        <div class="join-name">Dedicated Student</div>
+        <div class="join-desc">For those who wish to go deeper — reading alongside the Tibetan, asking questions, and joining a smaller circle of serious students.</div>
+        <ul class="join-features">
+          <li>Everything in Sunday Sangha</li>
+          <li>Monthly small-group study circle</li>
           <li>Direct access for text-related questions</li>
+          <li>Introduction to classical Tibetan reading alongside the English</li>
           <li>Annual printed compendium of commentaries</li>
-          <li>Founding supporter recognition</li>
         </ul>
-        <a href="#" class="btn btn-outline">Join as Benefactor</a>
+        <a href="#contact" class="btn btn-outline">Reach Out to Join</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════ FINAL CTA ═══════════════════ -->
-<section class="final-cta">
+<section class="final-cta" id="contact">
   <div class="container-narrow">
     <div class="reveal">
       <div class="final-ornament">༄༅། །</div>
-      <h2 class="final-heading">Turn the wheel of<br>the <em>Dharma</em><br>together.</h2>
+      <h2 class="final-heading">The wheel of the<br><em>Dharma</em><br>turns now — together.</h2>
       <p class="final-sub">
-        Seven years. Twelve pages a day. The direct words of the Buddha — not as distant history, but as a living practice for our time.
+        Seven years. 108 volumes. The direct words of the Buddha, in the last living language that holds them fully, guided by a Khenpo who has devoted his life to keeping this wisdom alive for all of humanity.
       </p>
-      <a href="#patron" class="btn btn-gold">Begin the Journey</a>
+      <p style="font-family:'Noto Serif Tibetan',serif;font-size:1.1rem;color:var(--gold-dim);margin-bottom:2.5rem;letter-spacing:0.2em">
+        ཆོས་ཀྱི་འཁོར་ལོ་བསྐོར་བར་གསོལ་བ་འདེབས།
+      </p>
+      <a href="mailto:khenpo@livingcanon.org" class="btn btn-gold" style="margin-bottom:1rem">Write to Khenpo Kunga Rinchen</a>
+      <br>
+      <p style="font-size:0.75rem;color:var(--muted);margin-top:1.5rem;letter-spacing:0.1em">All sessions are open. All are welcome. The teaching is freely given.</p>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
 <footer>
-  <div class="footer-tibetan">བཀའ་འགྱུར།</div>
-  <p>The Living Canon &nbsp;·&nbsp; A Seven-Year Journey Through the Words of the Buddha</p>
-  <p style="margin-top:0.5rem;opacity:0.5">© 2026 — All study materials and commentaries remain freely accessible.</p>
+  <div class="footer-tibetan">བཀའ་འགྱུར། — ཀུན་དགའ་རིན་ཆེན་མཁན་པོ།</div>
+  <p>The Living Canon &nbsp;·&nbsp; Khenpo Kunga Rinchen &nbsp;·&nbsp; A Seven-Year Journey Through the 108 Volumes of the Buddha</p>
+  <p style="margin-top:0.5rem;opacity:0.5">The Kangyur was given freely. This journey honors that. &nbsp;·&nbsp; All study materials and sessions are openly accessible.</p>
 </footer>
 
 <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
 <script>
-// Floating Tibetan particles
-const tibChars = ['ༀ','མ','ཎི','པ','དྨེ','ཧཱུྃ','ཨ','བ','ཀ','ག','ད','ན','ས','ཤ','ར','ལ'];
+const tibChars = ['ༀ','མ','ཎི','པ','དྨེ','ཧཱུྃ','ཨ','བ','ཀ','ག','ད','ན','ས','ཤ','ར','ལ','ཕ','ཇ','ཅ'];
 const particleContainer = document.getElementById('particles');
-for (let i = 0; i < 18; i++) {
+for (let i = 0; i < 22; i++) {
   const p = document.createElement('span');
   p.className = 'particle';
   p.textContent = tibChars[Math.floor(Math.random() * tibChars.length)];
   p.style.left = Math.random() * 100 + '%';
-  p.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
-  p.style.animationDuration = (18 + Math.random() * 25) + 's';
-  p.style.animationDelay = (Math.random() * 20) + 's';
+  p.style.fontSize = (0.8 + Math.random() * 1.4) + 'rem';
+  p.style.animationDuration = (18 + Math.random() * 28) + 's';
+  p.style.animationDelay = (Math.random() * 22) + 's';
   particleContainer.appendChild(p);
 }
 
-// Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 reveals.forEach(el => revealObs.observe(el));
 
-// Ring animation
 const ring = document.getElementById('ringFill');
 const ringObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) ring.classList.add('animated'); });
